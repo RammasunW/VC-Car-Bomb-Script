@@ -22,10 +22,13 @@ installCarbomb(vehPointer)
 	;get current veh driver pointer
 	driverPointer := MemoryRead(memory, veh, "int", 4, 0x1A8)
 	
-	;write detonator pointer as driver pointer, write carbomb state as 11
-	MemoryWrite(memory, veh, driverPointer, "int", 4, 0x210)
-	MemoryWrite(memory, veh, 11, "byte", 1, 0x1FE)
-	
+	;if player is on a vehicle
+	if (MemoryRead(memory, driverPointer) != 0)
+	{
+		;write detonator pointer as driver pointer, write carbomb state as 11
+		MemoryWrite(memory, veh, driverPointer, "int", 4, 0x210)
+		MemoryWrite(memory, veh, 11, "byte", 1, 0x1FE)
+	}
 	MemoryClose(memory)
 }
 
