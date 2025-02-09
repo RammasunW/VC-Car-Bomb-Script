@@ -7,3 +7,6 @@ Usage:
 
 Coming soon:
   Installing a car bomb in ONE key for both versions.
+
+
+Inspiration and some codes regarding memory manipulation: Courtesy of godbike script by YBurakD
