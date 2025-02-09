@@ -1,16 +1,23 @@
 #IfWinActive GTA: Vice City
 
-;Press B to install car bomb FOR JP version
-b::installCarbomb()
 
-installCarbomb()
-{
-	JPVehPointer := 0x7E19C8
-	
+vehPointerJP := 0x7E19C8
+vehPointerINTL := 0x7E49C0
+
+;Press , to install car bomb FOR JP version
+,::installCarbomb(vehPointerJP)
+
+;Press . to install car bomb FOR INTL version
+.::installCarbomb(vehPointerINTL)
+
+
+
+installCarbomb(vehPointer)
+{	
 	memory := MemoryOpenFromName("gta-vc.exe")
 	
 	;get current veh address
-	veh := MemoryRead(memory, JPVehPointer)
+	veh := MemoryRead(memory, vehPointer)
 	
 	;get current veh driver pointer
 	driverPointer := MemoryRead(memory, veh, "int", 4, 0x1A8)
