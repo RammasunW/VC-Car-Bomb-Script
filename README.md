@@ -4,7 +4,7 @@ Installs car bomb by pressing just ONE key!
 Usage: (works in both INTL 1.0 or JP version)
   1. Get in a vehicle
   2. To install a car bomb, press ',' (comma, or set it to whatever key you like)
-  3. You should also get a detonator, although its model is not loaded
+  3. You will also get a detonator, although its model is not loaded
 
 Codes regarding memory manipulation are from godbike script by YBurakD
 
